@@ -40,6 +40,14 @@ SELECT * FROM Artistas; -- ok
 SELECT * FROM TipoUsuario;
 SELECT * FROM Usuarios;
 SELECT * FROM Albuns; -- ok
+
+DELETE Estilos WHERE idEstilos = 1;
+DELETE Estilos;
+
+UPDATE Artistas
+SET Nome = 'ZECA PAGODINHO'
+WHERE idArtistas = 2;
+
 --Inserir dados na tabela--
 INSERT INTO Estilos (NomeEstilo)
 VALUES  ('Samba'), ('Rap'), ('Trap'), ('Pop');
@@ -82,7 +90,6 @@ WHERE idArtistas = 13
  SELECT * FROM Albuns
  WHERE  Datalancamento = 2020;
 
- SELECT * FROM idArtista WHERE idEstilo = 3;
 
 
 
