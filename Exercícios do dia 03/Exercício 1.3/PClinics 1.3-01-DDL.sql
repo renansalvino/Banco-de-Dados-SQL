@@ -1,0 +1,49 @@
+CREATE DATABASE PClinics
+
+Use PClinics
+
+CREATE TABLE Clinica (
+idClinica		INT PRIMARY KEY IDENTITY,
+RazaoSocial		VARCHAR (200),
+Endereco		VARCHAR(250)
+);
+
+CREATE TABLE Dono (
+idDono		INT PRIMARY KEY IDENTITY,
+Nome		VARCHAR (250)
+);
+
+CREATE TABLE TipoPet (
+idTipoPet		INT PRIMARY KEY IDENTITY,
+Titulo			VARCHAR (250)
+);
+
+CREATE TABLE Raca (
+idRaca		INT PRIMARY KEY IDENTITY,
+Titulo		VARCHAR(250),
+idTipoPet	INT FOREIGN KEY REFERENCES TipoPet (idTipoPet)
+);
+
+CREATE TABLE Veterinario (
+idVet		INT PRIMARY KEY IDENTITY,
+Nome		VARCHAR (200),
+CRMV		VARCHAR (200),
+idClinica	INT FOREIGN KEY REFERENCES Clinica (idclinica)
+);
+
+CREATE TABLE Pet (
+idPet		INT PRIMARY KEY IDENTITY,
+Nome		VARCHAR (250),
+Telefone	VARCHAR (250),
+idDono		INT FOREIGN KEY REFERENCES Dono (idDono),
+idRaca		INT FOREIGN KEY REFERENCES Raca (idRaca)
+);
+
+
+CREATE TABLE Atedimento (
+idAtendimento	INT PRIMARY KEY IDENTITY,
+DataAtendimento	DATE,
+Descricao		VARCHAR (200),
+idVet			INT FOREIGN KEY REFERENCES Veterinario (idVet),
+idPet			INT FOREIGN KEY REFERENCES Pet (idPet)
+);
