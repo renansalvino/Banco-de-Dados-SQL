@@ -1,5 +1,7 @@
 CREATE DATABASE StyleSong
 
+
+
 USE StyleSong
 
 CREATE TABLE Estilos (
@@ -41,28 +43,41 @@ SELECT * FROM TipoUsuario;
 SELECT * FROM Usuarios;
 SELECT * FROM Albuns; -- ok
 
+SELECT Nome, IdTipoUsuario
+FROM Usuarios
+WHERE Nome IS NOT NULL
+
 
 --Inserir dados na tabela--
 INSERT INTO Estilos (NomeEstilo)
-VALUES  ('Samba'), ('Rap'), ('Trap'), ('Pop');
+VALUES  ('Samba'), ('Rap'), ('Trap'), ('Pop'),('MPB');
 
 INSERT INTO Artistas (Nome)
 VALUES ('Travis Scott'), ('LIL PUMP'), ('Fulano de Tal'), ('Jefferson'),('Jordan');
 
 INSERT INTO Albuns (Nome, Datalancamento, QtdMinutos,Localização, Visualizacao,idArtista,idEstilo)
-Values ('JackBoys', '29/01/2020',120, 'SP', 2,2,1),
-('AstroWorld', '21/01/2019',200, 'LA (EUA)', 1000000, 2,16) ,
-('Forró de quintal', '20/01/2002',10,'MG',105,6,1),
-('Cachorro dos mano', '25/01/1998', 100, 'Canil das esquina do seu jão',1000,7,18),
-('JordanBoyz', '22/01/1999', 2010, 'EUA', 20000, 8, 18);
+Values ('JackBoys', '29/01/2020',120, 'Texas', 200000,1,2),
+('Lil Pump', '21/01/2019',200, 'LA (EUA)',  1000000,2 ,2),
+('Forró de quintal', '20/01/2002',10,'MG',105,3,1),
+('Cachorro dos mano', '25/01/1998', 100, 'Canil das esquina do seu jão',1000,4,4),
+('JordanBoyz', '22/01/1999', 2010, 'EUA', 20000, 5, 2);
 
 
 
 INSERT INTO TipoUsuario (Titulo)
-VALUES ('Admin'),('Deficiencia pessoal'), ('Cliente Comum'), ('Cliente Comum'), ('Dono De Tudo');
+VALUES ('Admin Principal'),('Deficiencia pessoal'), ('Admin 2'), ('Cliente Comum'), ('Dono De Tudo');
 
 INSERT INTO Usuarios (Nome,IdTipoUsuario)
-VALUES ('Renan',1),('Romeu', 2),('Saulo', 3),('Carol',4),('Deus',5);
+VALUES ('Renan',1),('Romeu', 2),('Saulo', 3),('Carol',3),('Deus',5),('Mano Bona',4);
+
+ALTER TABLE Usuarios 
+ADD Naoseioque	VARCHAR(250);
+
+ALTER TABLE		Usuarios
+DROP COLUMN		Naoseioque, SóParaTeste;
+
+ALTER TABLE Usuarios
+ALTER COLUMN	Naoseioque	DATE;	
 
 
 		
