@@ -1,0 +1,5 @@
+CREATE DATABASE naosei
+
+USE naosei
+
+CREATE TABLE
