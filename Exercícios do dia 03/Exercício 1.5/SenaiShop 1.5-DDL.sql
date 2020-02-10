@@ -18,8 +18,8 @@ CREATE TABLE Categorias (
 idCategorias		INT PRIMARY KEY IDENTITY,
 Nike				VARCHAR (250),
 Lacoste				VARCHAR (250),
-Jordan				VARCHAR (250)
-idLoja				INT FOREIGN REFERENCES Loja (idLoja)
+Jordan				VARCHAR (250),
+idLoja				INT FOREIGN KEY REFERENCES Loja (idLoja)
 );
 
 CREATE TABLE Subcategoria (
@@ -30,12 +30,13 @@ Basquete	VARCHAR (250),
 idCategorias	INT FOREIGN KEY REFERENCES Categorias (idCategorias)
 );
 
+
 CREATE TABLE Pedido (
 idPedido		INT PRIMARY KEY IDENTITY,
 ValorT					VARCHAR (250),
 PedidoStatus			VARCHAR (250),
 NumPedido				VARCHAR (250),
-idCliente				INT FOREIGN KEY REFERENCES Cliente (idCliente),
+idCliente				INT FOREIGN KEY REFERENCES Clientes (idCliente),
 idSub					INT FOREIGN KEY REFERENCES Subcategoria (idSub)
 );
 
@@ -43,6 +44,4 @@ CREATE TABLE Produtos (
 idProdutos		INT PRIMARY KEY IDENTITY,
 Tenis			VARCHAR (250),
 CortaVento		VARCHAR (250),
-Camisa			
-Camisa
 );

@@ -26,5 +26,4 @@ SELECT*FROM Clientes
 SELECT*FROM Categorias
 SELECT*FROM Subcategoria
 SELECT*FROM Produtos
-SELECT*FROM Pedido
-SELECT*FROM PedidosProdutos
+SELECT DataPedido FROM Pedido
